@@ -32,8 +32,8 @@ namespace Game.Scripts
 
         void Update()
         {
-            HandleMovement();
             UpdateSpeed();
+            HandleMovement();
         }
 
         public void AddMovementPosition(Vector2 position)
@@ -60,9 +60,8 @@ namespace Game.Scripts
             else
             {
                 _position = Vector2.MoveTowards(_position, _targetPosition, Time.deltaTime * _speed);
+                transform.localPosition = _position;
             }
-
-            transform.localPosition = _position;
         }
 
         private void UpdateSpeed()
@@ -71,6 +70,7 @@ namespace Game.Scripts
             {
                 case 0 when !_hasTarget:
                     _speed = 0;
+                    _smoothVelocity = 0;
                     break;
                 case 0:
                     _speed =
