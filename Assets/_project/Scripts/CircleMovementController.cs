@@ -19,7 +19,7 @@ namespace Game.Scripts
 
         [SerializeField] [Range(0, 1000)] private int _speedChangeDistanceMax = 150;
 
-        private readonly Queue<Vector2Int> _positions = new Queue<Vector2Int>();
+        private readonly Queue<Vector2> _positions = new Queue<Vector2>();
 
         private Vector2 _position;
         private Vector2 _targetPosition;
@@ -36,7 +36,7 @@ namespace Game.Scripts
             UpdateSpeed();
         }
 
-        public void AddMovementPosition(Vector2Int position)
+        public void AddMovementPosition(Vector2 position)
         {
             _positions.Enqueue(position);
         }

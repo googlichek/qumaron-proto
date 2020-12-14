@@ -33,7 +33,7 @@ namespace Game.Scripts
         {
             if (Input.GetKeyDown(KeyCode.Mouse0))
             {
-                var movementPosition = new Vector2Int(Mathf.RoundToInt(_relativePosition.x * Screen.width), Mathf.RoundToInt(_relativePosition.y * Screen.height));
+                var movementPosition = new Vector2(_relativePosition.x * Screen.width, _relativePosition.y * Screen.height);
                 _movementController.AddMovementPosition(movementPosition);
             }
         }
